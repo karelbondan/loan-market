@@ -4,31 +4,36 @@ import ErrorPage from "../error";
 import BankProduct from "../pages/product/bank/page";
 import BankProductDetail from "../pages/product/bank/detail/page";
 import BankProductEdit from "../pages/product/bank/detail/edit/page";
+import RootLayout from "../pages/layout";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
         element: <Dashboard />,
         errorElement: <ErrorPage />,
-        // TODO: add index to dashboard page
-        // TODO: set parent 'layout' to be this one, then add
-        // all the other pages to be the children
-    },
-    {
-        path: "/product/bank",
+        index: true,
+      },
+      {
+        path: "/product/bank_product",
         element: <BankProduct />,
         errorElement: <ErrorPage />,
-    },
-    {
-        path: "/product/bank/:id",
+      },
+      {
+        path: "/product/bank_product/:id",
         element: <BankProductDetail />,
         errorElement: <ErrorPage />,
-    },
-    {
-        path: "/product/bank/:id/edit",
+      },
+      {
+        path: "/product/bank_product/:id/edit",
         element: <BankProductEdit />,
         errorElement: <ErrorPage />,
-    }
+      },
+    ],
+  },
 ]);
 
 export default router;

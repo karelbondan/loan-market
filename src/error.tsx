@@ -5,7 +5,7 @@ export default function ErrorPage() {
     const navigate = useNavigate();
 
     return (
-        <div className="space-y-10">
+        <div className="flex flex-col justify-center items-center text-center space-y-10 w-full h-screen bg-primary">
             <div className="space-y-3">
                 <h1 className="text-4xl font-bold">Hey there!</h1>
                 <h2 className="text-xl">
@@ -13,13 +13,13 @@ export default function ErrorPage() {
                 </h2>
             </div>
             <button
-                className="rounded-lg font-bold border-2 border-white/30 px-4 py-2 hover:border-transparent hover:bg-white/10 transition-all"
+                className="rounded-lg font-bold border-2 border-black/30 px-4 py-2 hover:border-transparent hover:bg-black/10 transition-all"
                 onClick={e => { e.preventDefault(); navigate(-1) }}
             >
                 Return to previous page
             </button>
             <p className="opacity-50">
-                Additional details:{" "}
+                Details:{" "}
                 {/* @ts-expect-error */}
                 <i>{error.statusText || error.message}</i>
             </p>

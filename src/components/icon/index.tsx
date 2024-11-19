@@ -11,7 +11,7 @@ const useLazySvgImport = (name: string) => {
     const importIcon = async () => {
       try {
         importRef.current = (
-          await import(`../../../public/assets/icons/${name}.svg?react`)
+          await import(`../../assets/icons/${name}.svg?react`)
         ).default; // We use `?react` here following `vite-plugin-svgr`'s convention.
       } catch (err) {
         setError(err as Error);

@@ -2,7 +2,7 @@ import SidebarButtons from "./buttons";
 
 function Sidebar() {
   return (
-    <div className="flex flex-col min-w-[230px] h-full border-r-2 border-black/20">
+    <div className="flex flex-col min-w-[230px] h-full border-r border-black/20 bg-white">
       <img
         src="/assets/loan-market-logo.svg"
         className="w-full h-[110px] -translate-y-3"

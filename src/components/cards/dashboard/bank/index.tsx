@@ -28,7 +28,7 @@ function DashboardBankApprovalCard() {
     },
   ];
   return (
-    <div className="flex flex-col justify-center items-center w-full bg-white p-5 space-y-5 rounded-lg shadow-md">
+    <div className="flex flex-col justify-center items-center w-full bg-white p-5 space-y-5 rounded-lg shadow-md hover:-translate-y-1 transition-all">
       <h3 className="font-semibold text-xl">Top 5 Bank Approval Tertinggi</h3>
       <div className="size-[25rem]">
         <Doughnut

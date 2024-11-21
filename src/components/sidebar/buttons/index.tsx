@@ -1,17 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SidebarButtonsProps } from "../../../utils/types";
 import { Icon } from "../../icon";
-import { useState } from "react";
-import { formatPathname } from "../../../utils/funcs";
+import { useEffect, useState } from "react";
 
 function SidebarButtons(props: SidebarButtonsProps) {
   const [expand, setExpand] = useState(false);
-  const { icon, name, path, children } = props;
+  const [doHighlight, setdoHighlight] = useState(false);
+  const { icon, name, path, currentPath, onClick, children } = props;
   const navigate = useNavigate();
-  const location = useLocation();
-  const { pathname } = location;
-  const currentPath = pathname === "/" ? "Dashboard" : formatPathname(pathname);
-  const doHighlight = currentPath.toLowerCase() === name.toLowerCase();
+
+  useEffect(() => {
+    setdoHighlight(currentPath === path);
+  }, [currentPath])
 
   function handleClick(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -20,6 +20,7 @@ function SidebarButtons(props: SidebarButtonsProps) {
     e.preventDefault();
     if (type === "route") {
       navigate(path);
+      onClick(path);
     } else {
       setExpand(!expand);
     }
@@ -28,11 +29,10 @@ function SidebarButtons(props: SidebarButtonsProps) {
   return (
     <div>
       <button
-        className={`flex justify-between items-center w-full ${
-          doHighlight
-            ? "bg-primary-blue hover:bg-primary-blue/80 text-white"
-            : "hover:bg-black/10 text-sidebar-text"
-        } p-3 rounded-lg text-left font-medium`}
+        className={`flex justify-between items-center w-full ${doHighlight
+          ? "bg-primary-blue hover:bg-primary-blue/80 text-white"
+          : "hover:bg-black/10 text-sidebar-text"
+          } p-3 rounded-lg text-left font-medium transition-all`}
         onClick={(e) => handleClick(e, children ? "expand" : "route")}
       >
         <div className="flex space-x-4">
@@ -46,16 +46,14 @@ function SidebarButtons(props: SidebarButtonsProps) {
         {children && (
           <Icon
             name="chevron_down"
-            className={`size-3 ${
-              expand ? "-rotate-180" : ""
-            } transition-all duration-300`}
+            className={`size-3 ${expand ? "-rotate-180" : ""
+              } transition-all duration-300`}
           />
         )}
       </button>
       <div
-        className={`${
-          expand ? "max-h-[200px]" : "max-h-0"
-        } overflow-clip transition-all duration-300`}
+        className={`${expand ? "max-h-[200px]" : "max-h-0"
+          } overflow-clip transition-all duration-300`}
       >
         {children}
       </div>

@@ -36,7 +36,7 @@ function DashboardNotificationCard() {
     ]
     const length = notification.length;
     return (
-        <div className="py-5 px-6 h-fit bg-white rounded-lg shadow-md">
+        <div className="py-5 px-6 h-fit bg-white rounded-lg shadow-md hover:-translate-y-1 transition-all">
             <h3 className="font-semibold mb-5 text-lg">NOTIFICATION</h3>
             {notification.map((content, index) => {
                 return Notification({ content, index, length });

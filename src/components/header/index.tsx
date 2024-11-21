@@ -8,7 +8,7 @@ function Header() {
   const { pathname } = location;
 
   return (
-    <div className="flex justify-between items-center py-3 px-10 min-h-5 border-b border-black/20 bg-white">
+    <div className="flex justify-between items-center py-3 px-10 border-b border-black/20 bg-white">
       <h1 className="text-2xl text-header-text font-medium">
         {pathname === "/" ? "Dashboard" : formatPathname(pathname)}
       </h1>

@@ -36,13 +36,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-/*
-TODO: commit: 
-1. fixed icon sizings
-2. moved icons from public to src 
-3. properly styled error page
-4. add white background to every components
-5. developed dashboard page
-
-*/

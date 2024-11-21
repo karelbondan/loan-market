@@ -18,9 +18,9 @@ function DashboardPinjamanCard() {
   const containerStyle = "flex flex-col items-center justify-center space-y-5";
 
   return (
-    <div className="flex justify-center p-5 bg-white rounded-lg shadow-md relative">
+    <div className="flex justify-center p-5 bg-white rounded-lg shadow-md relative hover:-translate-y-1 transition-all">
       <button className="absolute top-3 right-3 p-1 border-2 border-primary-blue rounded-md scale-90 hover:scale-100 transition-all">
-        <Icon name="edit" className="size-6 text-primary-blue"/>
+        <Icon name="edit" className="size-6 text-primary-blue" />
       </button>
       <div className={containerStyle}>
         <h3 className={h3Style}>PINJAMAN DISETUJUI</h3>

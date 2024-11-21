@@ -37,7 +37,7 @@ export function Icon({ name, ...props }: IconProps) {
   }
 
   if (loading) {
-    return "Loading...";
+    return "...";
   }
 
   if (!Svg) {

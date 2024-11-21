@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function SidebarButtons(props: SidebarButtonsProps) {
   const [expand, setExpand] = useState(false);
   const [doHighlight, setdoHighlight] = useState(false);
-  const { icon, name, path, currentPath, onClick, children } = props;
+  const { icon, name, path, currentPath, onClick, barHidden, children } = props;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,6 +21,7 @@ function SidebarButtons(props: SidebarButtonsProps) {
     if (type === "route") {
       navigate(path);
       onClick(path);
+      barHidden(true);
     } else {
       setExpand(!expand);
     }

@@ -16,7 +16,7 @@ function ApplicationHeaderDots(props: AppHeaderDotsProps) {
                         {formatPathname(name)}
                     </p>
                 </div>
-                {!last && <div className={`h-1.5 w-full ${connectorBg}`} />}
+                {!last && <div className={`h-1.5 w-full min-w-[4.5rem] ${connectorBg}`} />}
             </div>
         </div>
     )

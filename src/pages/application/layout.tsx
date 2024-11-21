@@ -66,7 +66,7 @@ function ApplicationLayout() {
 
     return (
         <div className="overflow-y-auto">
-            <div className="flex justify-center max-w-full px-10 py-5 bg-white border-b border-black/20">
+            <div className="flex w-full px-14 py-5 bg-white border-b border-black/20 overflow-x-auto">
                 {pathStackList.map((path, idx) => {
                     return (
                         <ApplicationHeaderDots
@@ -79,15 +79,15 @@ function ApplicationLayout() {
                     )
                 })}
             </div>
-            <div className="flex items-center px-10 min-h-24 justify-between">
-                <button className="p-2 bg-primary-blue text-white rounded-full scale-90 hover:scale-100 active:scale-90 transition-all" onClick={e => handleNavigation(e, "back")}>
+            <div className="flex items-center justify-between space-x-3 px-5 865p:px-10 min-h-40 865p:min-h-24 ">
+                <button className="p-2 bg-primary-blue text-white rounded-full 1280p:scale-90 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all" onClick={e => handleNavigation(e, "back")}>
                     <Icon name="arrow-left" strokeWidth={2.5} className="size-7" />
                 </button>
                 <div className="text-center space-y-1">
                     <h2 className="text-2xl font-semibold">{formatPathname(currentPath)}</h2>
                     {subtitle && <p className="text-sidebar-text font-medium">{subtitle}</p>}
                 </div>
-                <button className="p-2 bg-primary-blue text-white rounded-full rotate-180 scale-90 hover:scale-100 active:scale-90 transition-all" onClick={e => handleNavigation(e, "next")}>
+                <button className="p-2 bg-primary-blue text-white rounded-full rotate-180 1280p:scale-90 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all" onClick={e => handleNavigation(e, "next")}>
                     <Icon name="arrow-left" strokeWidth={2.5} className="size-7" />
                 </button>
             </div>

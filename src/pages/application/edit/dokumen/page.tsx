@@ -68,7 +68,7 @@ function ApplicationEditAddDocument() {
                 </UploadDocumentSection>
             </form>
             <div className="flex justify-end mt-5">
-                <button className="flex items-center space-x-3 px-5 py-2 bg-tertiary-blue text-white rounded-sm scale-95 hover:scale-100 active:scale-90 transition-all"
+                <button className="flex items-center space-x-3 px-5 py-2 bg-tertiary-blue text-white rounded-sm 1280p:scale-95 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all"
                     onClick={e => e.preventDefault()}>
                     <Icon name="save" className="size-6" />
                     <span>UPDATE</span>
@@ -92,7 +92,7 @@ function UploadDocumentSection(props: UploadDocumentSectionProps) {
                     {title}
                 </h2>
             </div>
-            {children && <div className={`px-6 space-y-3 ${expanded ? "max-h-[500px] py-3" : "max-h-0"} overflow-hidden transition-all duration-300`}>{children}</div>}
+            {children && <div className={`px-6 space-y-4 ${expanded ? "max-h-[1000px] 865p:max-h-[500px] py-3" : "max-h-0"} overflow-hidden transition-all duration-300`}>{children}</div>}
         </div>
     )
 }

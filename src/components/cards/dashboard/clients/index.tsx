@@ -9,7 +9,7 @@ function DashboardClientsCard(props: ClientCardProps) {
                 <Icon name={icon} className="size-8 text-primary-blue" />
             </div>
             <div className="text-center space-y-1">
-                <h3 className="font-semibold text-lg">{name.toUpperCase()}</h3>
+                <h3 className="font-semibold text-lg hidden 525p:block">{name.toUpperCase()}</h3>
                 <p className="font-bold text-xl text-primary-blue">{count}</p>
             </div>
         </div>

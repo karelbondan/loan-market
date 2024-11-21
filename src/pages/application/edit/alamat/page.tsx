@@ -45,7 +45,7 @@ function ApplicationEditAlamat() {
 
     return (
         <div className="mx-5 mb-10 p-5 bg-white rounded-lg shadow-md">
-            <form id="form_alamat" className="space-y-3">
+            <form id="form_alamat" className="space-y-5">
                 <AlamatForm
                     title="Data KTP"
                     formFor="ktp"
@@ -54,11 +54,11 @@ function ApplicationEditAlamat() {
                     dataWilayah={dataWilayah}
                     updateWilayah={updateWilayah}
                     handleChange={handleChange} />
-                <div className="flex justify-between">
+                <div className="flex justify-between space-x-5 items-center">
                     <Checkbox onValueChange={e => { setdataDomisili({ ...dataDomisili, alamatSesuaiKTP: e }) }} >
                         Domisili sesuai KTP
                     </Checkbox>
-                    <button className="px-4 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm scale-95 hover:scale-100 active:scale-90 transition-all"
+                    <button className="px-4 py-1 h-10 bg-red-500 1280p:hover:bg-red-600 text-white rounded-sm 1280p:scale-95 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all"
                         onClick={e => e.preventDefault()}>
                         CLEAR
                     </button>
@@ -72,11 +72,11 @@ function ApplicationEditAlamat() {
                     dataWilayah={dataWilayah}
                     updateWilayah={updateWilayah}
                     handleChange={handleChange} />
-                <div className="flex justify-between">
+                <div className="flex justify-between space-x-5 items-center">
                     <Checkbox onValueChange={e => setdataTempatKerja({ ...dataTempatKerja, alamatSesuaiKTP: e })}>
                         Alamat tempat bekerja / perusahaan sesuai KTP
                     </Checkbox>
-                    <button className="px-4 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm scale-95 hover:scale-100 active:scale-90 transition-all"
+                    <button className="px-4 py-1 h-10 bg-red-500 1280p:hover:bg-red-600 text-white rounded-sm 1280p:scale-95 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all"
                         onClick={e => e.preventDefault()}>
                         CLEAR
                     </button>
@@ -92,7 +92,7 @@ function ApplicationEditAlamat() {
                     handleChange={handleChange} />
             </form>
             <div className="flex justify-end mt-5">
-                <button className="flex items-center space-x-3 px-5 py-2 bg-tertiary-blue text-white rounded-sm scale-95 hover:scale-100 active:scale-90 transition-all"
+                <button className="flex items-center space-x-3 px-5 py-2 bg-tertiary-blue text-white rounded-sm 1280p:scale-95 1280p:hover:scale-100 1280p:active:scale-90 active:scale-90 transition-all"
                     onClick={e => e.preventDefault()}>
                     <Icon name="save" className="size-6" />
                     <span>UPDATE</span>
@@ -118,7 +118,7 @@ function AlamatForm(props: AlamatFormProps) {
                 {title}
             </h2>
             <div className="p-5">
-                <div className="grid grid-cols-2 gap-10">
+                <div className="grid 865p:grid-cols-2 gap-10">
                     <div className="space-y-3">
                         <GeneralInput
                             labelLoc="top"

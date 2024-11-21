@@ -1,39 +1,8 @@
+import { notificationList } from "../../../../dummy/notification_list";
 import { NotificationProps } from "../../../../utils/types";
 
 function DashboardNotificationCard() {
-    const notification = [
-        {
-            title: "admin_branch has updated",
-            initiator: "Harry Handoko",
-            type: "Contact",
-            platform: "MYCRM",
-            // normally this would be a timestamp, 
-            // e.g. 2024-10-15T14:00:43.000+0000
-            // but for demo sake this is hardcoded
-            timestamp: "2 hrs"
-        },
-        {
-            title: "admin_branch has updated",
-            initiator: "Harry Handoko",
-            type: "Application",
-            platform: "MYCRM",
-            timestamp: "2 hrs"
-        },
-        {
-            title: "admin_branch has updated",
-            initiator: "Harry Handoko",
-            type: "Application",
-            platform: "MYCRM",
-            timestamp: "4 hrs"
-        },
-        {
-            title: "admin_branch has updated",
-            initiator: "Harry Handoko",
-            type: "Contact",
-            platform: "MYCRM",
-            timestamp: "4 hrs"
-        },
-    ]
+    const notification = notificationList;
     const length = notification.length;
     return (
         <div className="py-5 px-6 h-fit bg-white rounded-lg shadow-md hover:-translate-y-1 transition-all">

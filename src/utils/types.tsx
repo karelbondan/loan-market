@@ -6,6 +6,7 @@ export interface SidebarButtonsProps extends PropsWithChildren {
   path: string;
   currentPath: string;
   onClick: React.Dispatch<React.SetStateAction<string>>;
+  barHidden: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IconProps extends ComponentProps<"svg"> {

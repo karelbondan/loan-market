@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Checkbox from "../../../../components/input/checkbox"
-import { AlamatFormDataExtension, AlamatFormProps, WilayahData, WilayahDotIdResponse, WilayahFormData } from "../../../../utils/types";
+import { AlamatFormDataExtension, AlamatFormProps, WilayahData, WilayahDotIdResponse } from "../../../../utils/types";
 import GeneralInput from "../../../../components/input/text";
 import { getProvinsi, getWilayah } from "../../../../utils/funcs";
 import Dropdown from "../../../../components/input/dropdown";

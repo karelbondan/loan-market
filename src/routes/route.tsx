@@ -1,9 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../pages/page";
 import ErrorPage from "../error";
-import BankProduct from "../pages/product/bank/page";
-import BankProductDetail from "../pages/product/bank/detail/page";
-import BankProductEdit from "../pages/product/bank/detail/edit/page";
 import RootLayout from "../pages/layout";
 import ApplicationLayout from "../pages/application/layout";
 import ApplicationEdit from "../pages/application/edit/page";

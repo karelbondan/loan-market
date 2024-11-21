@@ -67,9 +67,10 @@ function ApplicationLayout() {
     return (
         <div className="overflow-y-auto">
             <div className="flex justify-center max-w-full px-10 py-5 bg-white border-b border-black/20">
-                {pathStackList.map(path => {
+                {pathStackList.map((path, idx) => {
                     return (
                         <ApplicationHeaderDots
+                            key={path + idx}
                             name={path}
                             filled={currentStack.includes(path)}
                             isCurrent={path === currentPath}

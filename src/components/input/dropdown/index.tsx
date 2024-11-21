@@ -7,6 +7,7 @@ function Dropdown(props: DropdownProps) {
     const [selected, setselected] = useState(new WilayahDotIdResponse());
     const [searchQuery, setsearchQuery] = useState("");
     const [search, setsearch] = useState<WilayahDotIdResponse[]>([]);
+    const randomId = Math.floor(Math.random() * 100000 + 10000);
 
     useEffect(() => {
         setsearch(selections);
@@ -45,6 +46,7 @@ function Dropdown(props: DropdownProps) {
                 <div className="absolute top-full left-0 z-20 w-full max-h-52 overflow-y-auto invisible opacity-0 peer-focus/input:visible peer-focus/input:opacity-100 peer-focus/input:translate-y-1 transition-all bg-white shadow-md rounded-lg border-2">
                     {search && search.map(wilayah => (
                         <button
+                            key={wilayah.name + String(randomId)}
                             className="px-4 py-2 w-full text-left hover:bg-gray-200 transition-all"
                             onClick={e => { e.preventDefault(); setselected(wilayah); onValueChange(wilayah); setsearchQuery(wilayah.name); setsearch(selections) }}
                         >

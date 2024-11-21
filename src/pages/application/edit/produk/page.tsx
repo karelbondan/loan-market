@@ -34,7 +34,7 @@ function ApplicationEditPilihanProdukBank() {
                 </div>
                 <div className="grid grid-cols-4 gap-7">
                     {bankData.map(bank => (
-                        <BankCheckbox {...bank} />
+                        <BankCheckbox key={String(Math.random()) + bank.title} {...bank} />
                     ))}
                 </div>
             </form>
@@ -68,12 +68,12 @@ function BankCheckbox(props: typeof pilihanProdukBank[0]) {
                     <span className="flex -space-x-1 text-yellow-500">
                         {[...Array(5).keys()].map(idx => {
                             if (idx < ratingInteger) {
-                                return <Icon name="star" className="size-7" />
+                                return <Icon key={String(Math.random())} name="star" className="size-7" />
                             } else if (ratingRemainder) {
                                 ratingRemainder = 0;
-                                return <Icon name="star-half" className="size-7" />
+                                return <Icon key={String(Math.random())} name="star-half" className="size-7" />
                             } else {
-                                return <Icon name="star-outline" className="size-7" />
+                                return <Icon key={String(Math.random())} name="star-outline" className="size-7" />
                             }
                         })}
                     </span>

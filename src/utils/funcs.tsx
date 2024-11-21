@@ -12,7 +12,7 @@ export function formatPathname(inp: string) {
 }
 
 export async function getProvinsi() {
-  return await fetch("https://wilayah.id/api/provinces.json", {
+  return await fetch("https://loanmarketapi.karel.id/provinces", {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -23,7 +23,7 @@ export async function getProvinsi() {
 }
 
 export async function getWilayah(code: string, type: "regencies" | "districts" | "villages") {
-  return await fetch(`https://wilayah.id/api/${type}/${code}.json`, {
+  return await fetch(`https://loanmarketapi.karel.id/${type}/${code}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
